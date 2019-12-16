@@ -27,7 +27,11 @@
 
 
 class MMGame
+    attr_accessor 
     
+    def play
+        
+    end 
     
     
 end 

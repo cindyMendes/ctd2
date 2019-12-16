@@ -17,11 +17,21 @@ class Board
         outcome_wrong_spot = 0
         outcome_array = []
         @secret.each_index do |i|
-            if array[i].include?(@secret[i])
-                outcome_right_spot += 1
+            array.each_index do |j|  
+                if array[j].include?(@secret[i])
+                    outcome_wrong_spot += 1
+                    if array[i].include?(@secret[i])
+                        outcome_right_spot += 1
+                        outcome_wrong_spot -= 1
+                        break
+                    end 
+                    break
+                end 
             end 
         end 
-        return outcome_array[outcome_right_spot, outcome_wrong_spot]
+        outcome_array << outcome_right_spot
+        outcome_array << outcome_wrong_spot
+        return outcome_array
     end 
     
 end 

@@ -23,8 +23,37 @@
 # end
 
 class Player 
+    attr_accessor :guess
     
+    # first attempt
+    # def user_input 
+    #     colors_array  = []
+    #     4.times do |i|
+    #         puts "Enter color #{i+1}: "
+    #         user_input = gets.chomp
+    #         colors_array << user_input
+    #     end 
+    # end 
     
+    def collect_guess
+        
+        @guess  = []
+        user_input = " "
+        until @guess.length == 4 do 
+            puts "Enter a color: "
+            user_input = gets.chomp
+            if (user_input == "")
+                puts "You must enter a color."
+                next  
+            end 
+            @guess << user_input.downcase
+        end 
+        
+        return @guess
+        
+    end 
+ 
+  
     
 end 
 
